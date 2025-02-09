@@ -49,7 +49,7 @@ bot.command("ffpanel", (ctx) => {
   ctx.reply(
     "🔥 *Free Fire Panel* 🔥\n\n" +
       "✅ *BAN FIX FILE* – [Download Here](https://www.mediafire.com/file/wm476qzzbj64f1d/BAN+FIX+FILE_.zip/file)\n\n" +
-      "📺 *Anti-Ban Tutorial* – [Watch Here](https://youtu.be/z8zsoB3nLEE?si=8ZOy1NhzY0QrsEab)",
+      "📺 *Anti-Ban Tutorial* – [Watch Here](https://youtu.be/-FXHEnKjfJs?si=ekZ9U3hpQXDpAond)",
     { parse_mode: "Markdown" }
   );
 });
