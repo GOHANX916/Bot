@@ -1,83 +1,59 @@
-require("dotenv").config();
 const { Telegraf } = require("telegraf");
-const express = require("express");
 
-const app = express();
-const bot = new Telegraf(process.env.BOT_TOKEN);
+// Replace with your actual bot token
+const BOT_TOKEN = "7514837389:AAErwaEdT4JE_-IQKcYJ2EG3WQY1uHUg8Jc";
 
-// ✅ /start command (Fully Escaped)
+const bot = new Telegraf(BOT_TOKEN);
+
+// /start command
 bot.start((ctx) => {
-  ctx.reply(
-    "\\_\\_👋 Hello\\! How can I assist you today\\?\\_\\_",
-    { parse_mode: "MarkdownV2" }
-  );
+  ctx.reply("👋 Hello! How can I assist you today?");
 });
 
-// ✅ /rat command (Proper Escaping)
+// /rat command
 bot.command("rat", (ctx) => {
   ctx.reply(
-    `🚀 \\_\\_How to Deploy on Render\\_\\_  
-
-📂 \\_\\_Step 1\\:\\_\\_ [📥 Download Required Files](https://t.me/ghnxxheats/48)  
-
-🛠 \\_\\_Step 2\\:\\_\\_ Create a \\_GitHub Account\\_  
-
-📦 \\_\\_Step 3\\:\\_\\_ Create a \\_Private Repo\\_ & Upload These Files\\:  
-   • 📄 \`server\\.js\`  
-   • 📄 \`package\\.json\`  
-   • 📄 \`data\\.json\`  
-
-🌐 \\_\\_Step 4\\:\\_\\_ Go to [Render\\.com](https://render.com)  
-   • 🔹 Sign up with \\_GitHub\\_  
-   • 🔹 Confirm your account  
-   • 🔹 Connect your \\_GitHub account\\_ to Render  
-
-⚡ \\_\\_Step 5\\:\\_\\_ Create a \\_New Web Service\\_  
-   • 🔹 Click **New Web Service**  
-   • 🔹 Select **Free Trial**  
-   • 🔹 Choose any \\_random service name\\_  
-   • 🔹 Select your \\_GitHub repo\\_ \\(it will start deploying automatically\\)  
-
-🔗 \\_\\_Step 6\\:\\_\\_ Copy Your \\_Web Service URL\\_  
-
-🛠 \\_\\_Step 7\\:\\_\\_ Edit \`data\\.json\` in Your GitHub Repo  
-   • 🔹 Enter your \\_Bot Token\\_, \\_Chat ID\\_, and \\_Web Service URL\\_  
-   • 🔹 Save the file  
-
-🚀 \\_\\_Step 8\\:\\_\\_ Go Back to \\_Render\\_  
-   • 🔹 Open your project  
-   • 🔹 Click **Deploy Latest Commits**  
-
-⌛ \\_\\_Step 9\\:\\_\\_ Wait a few seconds\\.\\.\\.  
-✅ Once the terminal shows **LIVE**, go to Telegram and start your bot\\!  
-
-📲 \\_\\_APK Editing Guide\\_\\_  
-
-1️⃣ Open \\_APK Editor\\_  
-2️⃣ Select \\_Your APK\\_ → Choose \\_Full Edit\\_ → Select \\_Decode All Files\\_  
-3️⃣ Navigate to \\_assets\\_ Folder → Open \`host\\.json\`  
-4️⃣ Paste Your \\_Web Service URL\\_  
-5️⃣ **Build APK** → Install & Enjoy\\!  
-
-📥 **[Download Required Files](https://t.me/ghnxxheats/48)**  
-
-💡 \\_Need help\\? Feel free to ask\\!\\_ 🚀`,
-    { parse_mode: "MarkdownV2" }
+    "🚀 *How to Deploy on Render*\n\n" +
+      "📂 *Step 1:* [📥 Download Required Files](https://t.me/ghnxxheats/48)\n\n" +
+      "🛠 *Step 2:* Create a *GitHub Account*\n\n" +
+      "📦 *Step 3:* Create a *Private Repo* & Upload These Files:\n" +
+      "   • 📄 `server.js`\n" +
+      "   • 📄 `package.json`\n" +
+      "   • 📄 `data.json`\n\n" +
+      "🌐 *Step 4:* Go to [Render.com](https://render.com)\n" +
+      "   • 🔹 Sign up with *GitHub*\n" +
+      "   • 🔹 Confirm your account\n" +
+      "   • 🔹 Connect your *GitHub account* to Render\n\n" +
+      "⚡ *Step 5:* Create a *New Web Service*\n" +
+      "   • 🔹 Click *New Web Service*\n" +
+      "   • 🔹 Select *Free Trial*\n" +
+      "   • 🔹 Choose any *random service name*\n" +
+      "   • 🔹 Select your *GitHub repo* (it will start deploying automatically)\n\n" +
+      "🔗 *Step 6:* Copy Your *Web Service URL*\n\n" +
+      "🛠 *Step 7:* Edit `data.json` in Your GitHub Repo\n" +
+      "   • 🔹 Enter your *Bot Token*, *Chat ID*, and *Web Service URL*\n" +
+      "   • 🔹 Save the file\n\n" +
+      "🚀 *Step 8:* Go Back to *Render*\n" +
+      "   • 🔹 Open your project\n" +
+      "   • 🔹 Click *Deploy Latest Commits*\n\n" +
+      "⌛ *Step 9:* Wait a few seconds...\n" +
+      "✅ Once the terminal shows *LIVE*, go to Telegram and start your bot!\n\n" +
+      "📥 *[Download Required Files](https://t.me/ghnxxheats/48)*\n\n" +
+      "💡 Need help? Feel free to ask! 🚀",
+    { parse_mode: "Markdown" }
   );
 });
 
-// Start bot polling
-bot.launch();
-console.log("🤖 Bot is running...");
-
-// Start Express server
-app.get("/", (req, res) => {
-  res.send("✅ Telegram Bot is Running!");
+// /ffpanel command (Correct Markdown formatting)
+bot.command("ffpanel", (ctx) => {
+  ctx.reply(
+    "🔥 *Free Fire Panel* 🔥\n\n" +
+      "✅ *BAN FIX FILE* – [Download Here](https://www.mediafire.com/file/wm476qzzbj64f1d/BAN+FIX+FILE_.zip/file)\n\n" +
+      "📺 *Anti-Ban Tutorial* – [Watch Here](https://youtu.be/z8zsoB3nLEE?si=8ZOy1NhzY0QrsEab)",
+    { parse_mode: "Markdown" }
+  );
 });
 
-const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => console.log(`🌍 Server running on port ${PORT}`));
-
-// Graceful stop on exit
-process.once("SIGINT", () => bot.stop("SIGINT"));
-process.once("SIGTERM", () => bot.stop("SIGTERM"));
+// Start the bot
+bot.launch();
+console.log("🤖 Bot is running...");
