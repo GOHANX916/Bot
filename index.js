@@ -1,7 +1,7 @@
 const { Telegraf } = require("telegraf");
 
 // Replace with your actual bot token
-const BOT_TOKEN = "7514837389:AAErwaEdT4JE_-IQKcYJ2EG3WQY1uHUg8Jc";
+const BOT_TOKEN = "7514837389:AAFa29zNHR9I23f3cO15hjzsQixOUgkQsi4";
 
 const bot = new Telegraf(BOT_TOKEN);
 
